@@ -55,6 +55,6 @@ The list of Machine Learning models tested here:
   - Gradient Boosting Regressor
 
 <p align="center">
-<img align="center" src="support\models.png" style="width: 400px" />
+<img align="center" src="support\models.png" style="width: 600px" />
 </p>
 
