@@ -1,47 +1,60 @@
 
 ---
 ### PROJET-4 
-### Building a mobile application for Santé Publique France
+### Predictions of energy consumption of the city of Seattle in order to reach its goal of being a carbon neutral city in 2050.
 ---
-### Prediction of energy consumption of the city of Seattle in order to reach its goal of being a carbon neutral city in 2050.
-<p align="center">
-<img align="center" src="support\santepublique.png" style="width: 300px" />
-</p>
-
-The [Santé publique France](https://www.santepubliquefrance.fr) has launched a call for projects to find innovative ideas for food-related mobile applications. We propose _*NUTRI + Z*_ that will provide the user:
-  - **NutriScore**, which is a letter grade varying from A (best) to E (worst),
-  - an alert **Z** which inform the user whether the product likely have adverse effects on health or on the environment. We are working on a dataset which consist of foods or beverages. The alert **Z** takes into account the material of the packaging, the ingredients of the product. For instance, that its package contains plastics will mean that the product may pollute the environment. Therefore, the user will be informed about negative effects of consumpting that product.
-
-We are responsable for verifing if the database of OpenFoodFacts contains enough information to implement the application project. In other words, we provide a result on the feasibility of our project.
-
-Concept of a mobile application 
 
 <p align="center">
-<img align="center" src="support\mobile_application_concept.png" style="width: 400px" />
+<img align="center" src="support\seattle.png" style="width: 300px" />
 </p>
+
+The City of Seattle is looking at the carbon emissions and energy use of non-residential properties by 2050. We will make predictions of 
+
+- **carbon dioxide (CO2) emissions** and
+- **total energy consumption** of the city of Seattle 
+
+from existing data.
+
+Our mission is to analyze past data, which was carried out in 2015 and 2016, and to implement Machine Learning algorithms to predict future values that have not yet been measured. Since readings are expensive to obtain, our study was carried out without annual consumption readings.
+
+We will first carry out a short exploratory analysis, test different prediction models in order to best respond to the problem and assess the impact of the EnergyStarScore indicator on the performance of these models. 
+
+Thanks to the Python library **FOLIUM** we have marked the building on a map in [this link.](https://yasarigno.github.io/seattle_folium_map.html) 
 
 ---
 Data source:
 
-https://world.openfoodfacts.org
-
-or
-
-https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-scientist/P2/fr.openfoodfacts.org.products.csv.zip
+https://www.kaggle.com/city-of-seattle/sea-building-energy-benchmarking#2015-building-energy-benchmarking.csv
 
 ---
 
-There are 3 notebooks in this project. In the first notebook, we clean the dataset and perform a first exploratory data analysis. We define the related in the second notebook, which are required to built the **Z** alert and ecoscore. There can be found a second data analysis such as correlations between the variables, ANOVA and some statistical tests. 
+There are 6 notebooks in this project. 
 
-In the dataset, there exist products for which the variable "NutriScore" is not available. The final notebook provides a way to fill in these missing values. We also see here a good example showing that imputation by mean or median is not always a good idea in the sense that it deforms dramatically the distribution of the target variable, i.e. NutriScore.
+**Notebook 1 :** Data Cleaning. We clean the dataset and perform a first exploratory data analysis. 
+
+**Notebook 2 :** Exploratory Data Analysis.
+
+**Notebook 3 :** Feature Engineering. We transform the raw data into features that more accurately represent the problem underlying the predictive model.
+
+**Notebook 4 :** Machine Learning. We predict carbon dioxide (CO2) emissions using ML models.
+
+**Notebook 5 :** Machine Learning. Prediction of total energy consumptions.
+
+**Notebook 6 :** Machine Learning. We take **EnergyStarScore** into account to see if it increases the performance of the models in Notebook 5.
 
 ---
-Technical tools used in this project are
-  - Pandas
-  - Numpy
-  - Math
-  - Scipy
-  - Seaborn
-  - Matplotlib
-  - WordCloud
-  - KnnImputer
+The list of Machine Learning models tested here:
+  - Linear Regression
+  - Lasso
+  - Ridge
+  - Elastic Net
+  - SVM
+  - K Neighbors Regressor
+  - Random Forest Regressor
+  - Decision Tree Regressor
+  - Gradient Boosting Regressor
+
+<p align="center">
+<img align="center" src="support\models.png" style="width: 400px" />
+</p>
+
