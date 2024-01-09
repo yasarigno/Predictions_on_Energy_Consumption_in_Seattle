@@ -1,6 +1,5 @@
 
 ---
-### PROJET-4 
 ### Predictions of energy consumption of the city of Seattle in order to reach its goal of being a carbon neutral city in 2050.
 
 [Click here](https://yasarigno.github.io/folder/P4_support.pdf) for the presentation file of the project. 
